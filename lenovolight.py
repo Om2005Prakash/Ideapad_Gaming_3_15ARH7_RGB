@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 
 #
-# Lenovo Ideapad / Legion Gaming 2021 keyboard light controller
+# Lenovo Ideapad 3 15ARH7 RGB LIGHTS
 # INS, 2021, MIT
-#
-# Add udev rule as "/etc/udev/rules.d/10-kblight.rules" if you want control light as user
-# SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c965", MODE="0666"
+# Add udev rule as follows if you want control light as user
+# sudo nano /etc/udev/rules.d/10-kblight.rules 
+# SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c973", MODE="0666"
 #
 # Payload description
 #
@@ -51,11 +51,15 @@ import usb.core
 
 class LedController:
     # Keyboard light device
-    # Integrated Technology Express, Inc. ITE Device(8295)
-    #WARNING
-    #replacing with your VENDOR and PRODUCT might be needed!
+    
+    # WARNING
+    # You may have to change PRODUCT variable if you have slightly different IdeaPad or Legion
+    # You can get idProduct and idVendor by using the following command
+    # usb-devices
+    # Search for Integrated Technology Express, Inc. ITE Device(8295) and get the idProduct
+    
     VENDOR = 0x048D
-    PRODUCT = 0xC963
+    PRODUCT = 0xC973
     EFFECT = {"static": 1, "breath": 3, "wave": 4, "hue": 6}
 
     def __init__(self):
@@ -178,7 +182,7 @@ if __name__ == "__main__":
 
     # Parse arguments
     argparser = argparse.ArgumentParser(
-        description="Lenovo Legion 5 Pro 2021 keyboard light controller"
+        description="Lenovo Ideapad 3 15ARH7 keyboard light controller"
     )
 
     effect_subparsers = argparser.add_subparsers(help="Light effect", dest="effect")
