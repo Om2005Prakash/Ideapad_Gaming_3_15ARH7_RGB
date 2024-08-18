@@ -1,5 +1,8 @@
 ![Lenovo Ideapad / Gaming 3 2021 Linux RGB Keyboard Light Controller](https://i.imgur.com/FhBMS9W.jpg)
 
+# This repository is modified to support Ideapad Gaming 3 (15ARH7)
+## If you have a model close to this you can read the python file for instructions to modify
+
 # Lenovo Ideapad Gaming 3 2021 Linux RGB Keyboard Light Controller
 
 This util allows to drive RGB keyboard light on Lenovo Ideapad Gaming 3 or Legion 5 Pro 2021 Laptop
@@ -33,8 +36,8 @@ python lenovolight.py --help
 
 Add udev rule if you want to switch light as unprivileged user
 ```
-# /etc/udev/rules.d/10-kblight.rules
-SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c963", MODE="0666"
+sudo nano /etc/udev/rules.d/10-kblight.rules
+SUBSYSTEM=="usb", ATTR{idVendor}=="048d", ATTR{idProduct}=="c973", MODE="0666"
 ```
 
 Reload rules
