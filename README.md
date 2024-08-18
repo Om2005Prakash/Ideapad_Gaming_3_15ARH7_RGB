@@ -1,7 +1,7 @@
 ![Lenovo Ideapad / Gaming 3 2021 Linux RGB Keyboard Light Controller](https://i.imgur.com/FhBMS9W.jpg)
 
 # This repository is modified to support Ideapad Gaming 3 (15ARH7)
-## If you have a model close to this you can read the python file for instructions to modify
+ If you have a model close to this you can read the python file for instructions to modify
 
 # Lenovo Ideapad Gaming 3 2021 Linux RGB Keyboard Light Controller
 
